@@ -1,0 +1,35 @@
+import tweepy
+
+#creating consumer key and secret key
+#to authenticate twitter from ur account
+consumer_key='..'
+
+consume_secret='....'
+
+#creating access key and secret key
+
+access_key=',....'
+access_secret='.....'
+
+#connecting for authentication
+#here auth is very much similer to session variable
+
+auth=tweepy.OAuthHandler(consumer_key,consumer_secret)
+
+auth.set_access_token(access_key,acces_secret)
+
+#connecting the API
+
+connect=tweepy.API(auth)
+#now we are connected
+#now finding data
+#print (dir(connect))
+
+get_data=connect.search('trump'.count=10)     #also define count like how many prints on this topic we need	
+					#search('trump'.count=10) ---->>> no of tweets
+
+print(get_data)
+#printing the data now
+
+for i in g_data:
+	print i.text
